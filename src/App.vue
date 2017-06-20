@@ -18,7 +18,7 @@
   </md-menu-content>
 </md-menu>
             <router-link class="md-raised" tag="md-button" to="/appointment-entries"><a>Appointments</a></router-link>
-            <router-link class="md-raised" tag="md-button" to="/drugsInfo"><a>DrugsInfo</a></router-link>
+           
             
             
             
