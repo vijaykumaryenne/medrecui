@@ -1,42 +1,30 @@
 <template>
-  <div class="form-horizontal">
-    <div class="form-group">
-      <div class="col-sm-6">
-        <label>Date</label>
-        <input 
-          type="date"
-          class="form-control"
-          v-model="timeEntry.date"
-          placeholder="Date"
-        />
-      </div>
-      <div class="col-sm-6">
-        <label>Hours</label>
-        <input 
-          type="number" 
-          class="form-control"
-          v-model="timeEntry.totalTime"
-          placeholder="Hours"
-        />
-      </div>      
-    </div>    
-    <div class="form-group">
-      <div class="col-sm-12">
-        <label>Comment</label>
-        <input 
-          type="text" 
-          class="form-control"
-          v-model="timeEntry.comment"
-          placeholder="Comment"
-        />
-      </div>        
-    </div>    
-    <button class="btn btn-primary" v-on:click="save()">Save</button>
-    <router-link 
-        v-bind:to="'/time-entries/'">
-          <a class="btn btn-primary">Cancel</a>
-      </router-link>  
-    <hr>
+<div class="pagelayout">
+  <md-card>
+    <md-card-content> 
+    <md-input-container>
+   <label>Date</label>
+      <md-icon class="primary">date_range</md-icon>
+      <md-input type="date" placeholder="Date" v-model="timeEntry.date"></md-input>
+ </md-input-container> 
+ <md-input-container>
+   <label>Hours</label>
+      <md-icon >time</md-icon>
+      <md-input type="number" placeholder="Hours" v-model="timeEntry.totalTime"></md-input>
+
+ </md-input-container> 
+ <md-input-container>
+   <label>Comment</label>
+                <md-icon >description</md-icon>
+                <md-textarea placeholder="comment" v-model="timeEntry.comment" maxlength="70"></md-textarea>
+
+ </md-input-container> 
+ <md-button class="md-raised md-accent" v-on:click.native="save()">Save</md-button>
+<router-link class="md-transperent" tag="md-button" to="/time-entries"><md-icon>cancel</md-icon><a>Cancel</a></router-link>
+
+  </md-card-content> 
+  </md-card> 
+ 
   </div>
 
 </template>

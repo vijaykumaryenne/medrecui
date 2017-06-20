@@ -1,63 +1,44 @@
 <template>
   <div>
-    <router-link
-      v-if="$route.path !== '/time-entries/log-time'"
-      to="time-entries/log-time"
-      class="btn btn-primary">
-      Log Time
-    </router-link>
- 
-    <div v-if="$route.path === '/time-entries/log-time'">
-      <h3>Log Time</h3>     
-    </div>
+<md-card>
 
-    <hr>
-
-    <router-view></router-view>
-
-    <div class="time-entries">
-      <p v-if="!timeEntriesResult.length"><strong>No time entries yet</strong></p>
-
-      <div class="list-group">
-
-        <a class="list-group-item" v-for="timeEntry in timeEntriesResult">
-          <div class="row">
-            <div class="col-sm-2 user-details">
-              <img :src="timeEntry.user.image" class="avatar img-circle img-responsive" />
-              <p class="text-center">
+<md-whiteframe md-elevation="3">
+                <router-link v-if="$route.path !== '/time-entries/log-time'" class="md-transperent" tag="md-button" to="/time-entries/log-time"><md-icon>note_add</md-icon><a>Log time</a></router-link>
+            </md-whiteframe>
+</md-card-header>
+<md-card-content>      
+ <p v-if="!timeEntriesResult.length"><strong>No time entries yet</strong></p>
+  <md-list v-for="timeEntry in timeEntriesResult">
+    <md-list-item>
+      <span><img :src="timeEntry.user.image" class="avatar img-circle img-responsive" /></span>
+      <p>
                 <strong>
                   {{ timeEntry.user.firstName }} 
                   {{ timeEntry.user.lastName }}
                 </strong>
               </p>
-            </div>
+       <h3>{{ timeEntry.totalTime }} </h3> 
+       <p>   {{ timeEntry.date }} </p>  
+       <p>{{ timeEntry.comment }}</p>    
+       <md-button class="md-icon-button md-raised" @click.native="deleteTimeEntry(timeEntry)">
+         <md-icon>add</md-icon>
+       </md-button>
+    </md-list-item>
+  </md-list>
+ 
+       
+</md-card-content>
+</md-card>  
 
-            <div class="col-sm-2 text-center time-block">
-              <h3 class="list-group-item-text total-time">
-                <i class="glyphicon glyphicon-time"></i> 
-                {{ timeEntry.totalTime }}
-              </h3>
-              <p class="label label-primary text-center">
-                <i class="glyphicon glyphicon-calendar"></i> 
-                {{ timeEntry.date }}
-              </p>
-            </div>
 
-            <div class="col-sm-7 comment-section">
-              <p>{{ timeEntry.comment }}</p>
-            </div>
 
-            <div class="col-sm-1">
-              <button 
-                class="btn btn-xs btn-danger delete-button"
-                @click="deleteTimeEntry(timeEntry)">
-                X
-              </button>
-            </div>
-          </div>        
-        </a>
-      </div>
-    </div>    
+    
+ 
+     
+
+    <router-view></router-view>
+
+    
   </div>
 </template>
 

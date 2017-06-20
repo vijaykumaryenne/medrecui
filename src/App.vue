@@ -64,6 +64,22 @@ export default {
 
 </script>
 
-<style>
 
+<style>
+.page-layout {
+  margin: 16px 5%;
+  display: flex;
+
+  .column {
+    flex: 1;
+
+    + .column {
+      margin-left: 8px;
+    }
+  }
+
+  .md-card + .md-card {
+    margin-top: 8px;
+  }
+}
 </style>

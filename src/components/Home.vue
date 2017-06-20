@@ -1,15 +1,17 @@
 <template>
-  <div class="jumbotron">
-    <h1>MedRec App</h1>
-    <p>
-      <strong>
-        Get started by <a v-bind:href="'/time-entries'">creating a time entry</a>.
-      </strong>
-    </p>  
+  <div class="page-layout">
+    
+     
+         
+      
+  
     <md-card class="card-example">
   <md-card-area md-inset>
-    <md-card-media md-ratio="16:9">
-      <img src="../assets/logo.png" alt="Coffee House">
+    <md-card-media>
+      <span>
+      <md-subheader class="md-accent">
+        Get started by  <router-link class="md-transperent" tag="md-button" to="/time-entries"><md-icon>note_add</md-icon><a>Time Entries</a></router-link></md-subheader>
+       </span>
     </md-card-media>
 
     <md-card-header>
@@ -84,5 +86,21 @@
       border-radius: 2px !important;
     }
   }
+  .page-layout {
+  margin: 16px 5%;
+  display: flex;
+
+  .column {
+    flex: 1;
+
+    + .column {
+      margin-left: 8px;
+    }
+  }
+
+  .md-card + .md-card {
+    margin-top: 8px;
+  }
+}
 }
 </style>

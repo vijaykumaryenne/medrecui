@@ -1,12 +1,17 @@
 <template>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h1 class="text-center">Total Time</h1>   
-    </div>
+  <div>
+  <md-card>
 
-    <div class="panel-body">
-      <h1 class="text-center">{{ time }} hours</h1>
-    </div>
+<md-card-header>
+          
+            <md-whiteframe md-elevation="3">
+                <md-subheader class="md-accent">Total Time</md-subheader>
+                <md-subheader class="md-accent">{{ time }} hours</md-subheader>                                
+            </md-whiteframe>
+        </md-card-header>
+  </md-card> 
+
+   
   </div>
 </template>
 
