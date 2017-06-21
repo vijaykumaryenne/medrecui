@@ -12,11 +12,11 @@
     </md-button>
   </md-toolbar>
 
-  <md-table md-sort="Fullname" md-sort-type="desc" @select="onSelect" @sort="onSort">
+  <md-table md-sort="Fullname" md-sort-type="desc">
     <md-table-header>
       <md-table-row>
-        <md-table-head md-sort-by="_id">Physician Id</md-table-head>
-        <md-table-head md-sort-by="Fullname">Full Name</md-table-head>
+        <md-table-head md-sort-by="Fullname">Email</md-table-head>
+        <md-table-head md-sort-by="_id">Physician Id</md-table-head>        
         <md-table-head md-sort-by="MedicalSpeciality" >Speciality</md-table-head>        
       </md-table-row>
     </md-table-header>
@@ -54,15 +54,12 @@ export default {
   created() {
       HTTP.get('physicians')
       .then(response => {
-        this.physicians = response.data.Physicians;
+        this.physicians = response.data;
       })
       .catch(e => {
         this.errors.push(e)
       })      
-  },
-   onPagination(evt) {
-      console.log(evt.page); // <-- here you are
-    }
+  }
 }
 </script>
 

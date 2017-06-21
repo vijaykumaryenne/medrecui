@@ -2,9 +2,9 @@
  
    
       
-<div class="md-theme-purple">
+<div>
        
-  <md-toolbar  class="md-accent">
+  <md-toolbar class="md-accent">
     
   <md-menu md-align-trigger md-size="5">
   <md-button class="md-dense" md-menu-trigger><md-icon class="md-primary" md-theme="green" >dashboard</md-icon>Medrec App</md-button>
@@ -13,11 +13,12 @@
     <md-menu-item><router-link class="md-transperent" tag="md-button" to="/"><md-icon>home</md-icon><a>Home</a></router-link></md-menu-item>
     <md-menu-item><router-link class="md-transperent" tag="md-button" to="/time-entries"><md-icon>note_add</md-icon><a>Time Entries</a></router-link></md-menu-item>
     <md-menu-item><router-link class="md-transperent" tag="md-button" to="/appointment-entries"><md-icon>event</md-icon><a>Appointments</a></router-link></md-menu-item>
-    <md-menu-item><router-link class="md-transperent" tag="md-button" to="/drugs-inventory"><md-icon>donut_small</md-icon><a>Drugs Inventory</a></router-link></md-menu-item>
     <md-menu-item><router-link class="md-transperent" tag="md-button" to="/physicians-list"><md-icon>people</md-icon><a>Physicians List</a></router-link></md-menu-item>
+    <md-menu-item><router-link class="md-transperent" tag="md-button" to="/drugInfo"><md-icon>donut_small</md-icon><a>Drug Info</a></router-link></md-menu-item>
   </md-menu-content>
 </md-menu>
             <router-link class="md-raised" tag="md-button" to="/appointment-entries"><a>Appointments</a></router-link>
+            <router-link class="md-raised" tag="md-button" to="/drugInfo"><a>Drug Info</a></router-link>
            
             
             

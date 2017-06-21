@@ -9,8 +9,7 @@ var store = new Vuex.Store({
     timeEntries: [],
     totalTime: 0,
     appointments: [],
-    drugDetailsList: [],
-    drugsInfo: []
+    drugs: []
   },
   mutations: {
     timeUpdate(state,timeEntry) {
@@ -29,38 +28,18 @@ var store = new Vuex.Store({
       let index = state.appointments.indexOf(appointment);
       state.appointments.splice(index, 1);      
     },
-    drugListUpdate(state,drugData){      
-        HTTP.post('drugs',{
-              "company": drugData.drugCompanyName,
-              "name": drugData.drugName,
-              "sideeffects": drugData.drugSideEffects   
-        })
-        .then(response => {
-          console.log(response);          
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
-        state.drugDetailsList.push(drugData);
-      },
-      SET_DRUGSINFO_LIST: (state, { list }) => {
-      state.drugsInfo = list
+    drugInventoryUpdate(state,drugInfoData){
+      state.drugs.push(drugInfoData);
+      
     },
-    ADD_PROJECT: (state, { drugsData }) => {
-      state.projects.push(drugsData)
+      SET_DRUG_LIST: (state, { list }) => {
+      state.drugs = list
     }
   },
   actions: {
-    LOAD_DRUGSINFO_LIST: function ({ commit }) {
+    LOAD_DRUG_LIST: function ({ commit }) {
       HTTP.get('drugs').then((response) => {
-        commit('SET_DRUGSINFO_LIST', { list: response.data })
-      }, (err) => {
-        console.log(err)
-      })
-    },
-    ADD_NEW_DRUG_INFO: function ({ commit }) {
-      HTTP.post('drugs').then((response) => {
-        commit('ADD_DRUGS', { drugsData: response.data })
+        commit('SET_DRUG_LIST', { list: response.data })
       }, (err) => {
         console.log(err)
       })

@@ -6,15 +6,16 @@ import Home 		from './components/Home'
 import TimeEntries 	from './components/TimeEntries'
 import LogTime 		from './components/LogTime'
 import Appointments from './components/Appointments'
-import Drugs from './components/Drugs'
+import DrugInventory from './components/DrugInventory'
+
 import Physicians from './components/Physicians'
-import DrugsInfo from './components/DrugsInfo'
 
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 
 import VueRouter 	from 'vue-router'
 import VueResource 	from 'vue-resource'
+import store from './store'
 
 
 Vue.use(VueResource)
@@ -34,9 +35,8 @@ const router = new VueRouter({
 			]
 		},
 		{ path: '/appointment-entries', component: Appointments},
-		{ path: '/drugs-inventory', component: Drugs},
 		{ path: '/physicians-list', component: Physicians},
-		{ path: '/drugsInfo', component: DrugsInfo},
+		{ path: '/drugInfo', component: DrugInventory},
 		{ path: '*', redirect: '/home'}
 	],
 	mode: 'history' 
@@ -47,6 +47,7 @@ var bus = new Vue({});
 /* eslint-disable no-new */
 const app = new Vue({
 	router,
+	store,
 	data: {
 		bus: bus
 	},
