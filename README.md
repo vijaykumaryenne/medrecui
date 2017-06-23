@@ -1,4 +1,4 @@
-# Medrec Sample UI web application
+# Medrec Sample web application  by Vijay Kumar Yenne
 A sample responsive web application built for MedRec Platform API's using Vue.js framework. This branch of the application uses material design.
 
 
@@ -23,6 +23,17 @@ npm run build
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## How to access the App from your Mobile Device
+> access our localhost:3000 from distant mobile device. My favorite one is to use ngrok.
+> Ngrok is a service that relays your local environment on a distant dns, for free!
+
+```bash
+# install ngrok
+npm install -g ngrok
+# run
+ngrok http 8080
+```
 
 ## How to Dockerise this web application and register it on Docker Hub
 1. Create a dockerfile in the Web App root folder as below (Refer the Dockerfile)
@@ -135,4 +146,4 @@ Add Ports Configuration: Host Port: 41960 Container Port: 3000 tcp
 3.Everytime you make a commit to Github, the image is automatically built and available on the Docker 
 Hub.
 
-4. Login to OCCS and Deploy the latest image available.
+4.Login to OCCS and Deploy the latest image available.

@@ -4,7 +4,7 @@
       
 <div>
        
-  <md-toolbar class="md-accent">
+  <md-toolbar class="md-primary">
     
   <md-menu md-align-trigger md-size="5">
   <md-button class="md-dense" md-menu-trigger><md-icon class="md-primary" md-theme="green" >dashboard</md-icon>Medrec App</md-button>

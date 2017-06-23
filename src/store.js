@@ -32,6 +32,10 @@ var store = new Vuex.Store({
       state.drugs.push(drugInfoData);
       
     },
+    drugInventoryDelete(state,drugInfoData){
+      let index = state.drugs.indexOf(drugInfoData);
+      state.drugs.splice(index, 1); 
+    },
       SET_DRUG_LIST: (state, { list }) => {
       state.drugs = list
     }
