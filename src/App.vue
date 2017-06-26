@@ -7,7 +7,7 @@
   <md-toolbar class="md-primary">
     
   <md-menu md-align-trigger md-size="5">
-  <md-button class="md-dense" md-menu-trigger><md-icon class="md-primary" md-theme="green" >dashboard</md-icon>Medrec App</md-button>
+  <md-button class="md-dense" md-menu-trigger><md-icon class="md-dense" >menu</md-icon>Medrec App</md-button>
 
   <md-menu-content>
     <md-menu-item><router-link class="md-transperent" tag="md-button" to="/"><md-icon>home</md-icon><a>Home</a></router-link></md-menu-item>

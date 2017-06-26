@@ -25,7 +25,7 @@ npm run build
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 ## How to access the App from your Mobile Device
-> access our localhost:3000 from distant mobile device. My favorite one is to use ngrok.
+> access your localhost:3000 from distant mobile device. My favorite one is to use ngrok.
 > Ngrok is a service that relays your local environment on a distant dns, for free!
 
 ```bash
