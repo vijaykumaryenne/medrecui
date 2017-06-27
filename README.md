@@ -2,7 +2,7 @@
 A sample responsive web application built for MedRec Platform API's using Vue.js framework. This branch of the application uses material design.
 
 
-> A Vue.js project for Medrec App. The app has the functionality to log/track time, create or remove appointments and lists Drug Inventory calling the MedRec APIs.
+> A Vue.js project for Medrec App. The app has the functionality for patients to book an appointment, view their prescriptions, look up details of the specialist etc. The UI is decoupled from the backend taking a cue from the micro-services based architecture. The backend API's are hosted on the Oracle cloud environment. The UI is adopted based on the Material Design principles and Progressive Based Framework called Vue.js. 
 
 > Axios is the http client library used to invoke the MedRec API's. It uses promises by default and runs on both the client and the server (which makes it appropriate for fetching data during server-side rendering). 
 
